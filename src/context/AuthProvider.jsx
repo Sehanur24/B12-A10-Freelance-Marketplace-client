@@ -14,12 +14,12 @@ const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null); 
     const [loading, setLoading] = useState(true);
 
-   
+
     const register = async ({ name, email, password, photoURL }) => {
         setLoading(true);
         const res = await createUserWithEmailAndPassword(auth, email, password);
 
-       
+
         if (name || photoURL) {
             await updateProfile(res.user, {
                 displayName: name || res.user.displayName || "",
