@@ -1,9 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
-
-// Layout
 import MainLayout from "../layout/MainLayout";
-
-// Pages
 import Home from "../pages/Home/Home";
 import AllJobs from "../pages/AllJobs/AllJobs";
 import JobDetails from "../pages/JobDetails/JobDetails";
@@ -15,7 +11,6 @@ import Login from "../pages/Auth/Login";
 import Register from "../pages/Auth/Register";
 import NotFound from "../pages/NotFound";
 
-// Protected Route
 import ProtectedRoute from "../components/ProtectedRoute";
 
 export const router = createBrowserRouter([
@@ -23,19 +18,19 @@ export const router = createBrowserRouter([
         path: "/",
         element: <MainLayout />,
         children: [
-            // HOME
+
             {
                 index: true,
                 element: <Home />,
             },
 
-            // ALL JOBS
+
             {
                 path: "allJobs",
                 element: <AllJobs />,
             },
 
-            // SINGLE JOB (protected)
+
             {
                 path: "allJobs/:id",
                 element: (
@@ -45,7 +40,7 @@ export const router = createBrowserRouter([
                 ),
             },
 
-            // ADD JOB (protected)
+
             {
                 path: "addJob",
                 element: (
@@ -55,7 +50,7 @@ export const router = createBrowserRouter([
                 ),
             },
 
-            // MY ADDED JOBS (protected)
+
             {
                 path: "myAddedJobs",
                 element: (
@@ -65,7 +60,7 @@ export const router = createBrowserRouter([
                 ),
             },
 
-            // UPDATE JOB (protected)
+
             {
                 path: "updateJob/:id",
                 element: (
@@ -75,7 +70,7 @@ export const router = createBrowserRouter([
                 ),
             },
 
-            // ACCEPTED TASKS (protected)
+
             {
                 path: "my-accepted-tasks",
                 element: (
@@ -85,7 +80,7 @@ export const router = createBrowserRouter([
                 ),
             },
 
-            // LOGIN / REGISTER
+
             {
                 path: "login",
                 element: <Login />,
@@ -95,7 +90,7 @@ export const router = createBrowserRouter([
                 element: <Register />,
             },
 
-            // 404
+
             {
                 path: "*",
                 element: <NotFound />,
